@@ -1,3 +1,24 @@
+<?php
+  if(isset($_POST['envoyez']))  // WKey4567# code logiciel "wirelesswifi"
+  {
+
+    $name = htmlspecialchars(strip_tags(trim($_POST['name'])));
+    $email = htmlspecialchars(strip_tags(trim($_POST['email'])));
+    $message = htmlspecialchars(strip_tags(trim($_POST['message'])));
+    $moi = "realitytech2019@gmail.com";
+    $headers = 'Content-type: text/plain; charset="utf-8"'." ";
+    $envoi = "Envoi de Message Mail à REALITY TECH de la part de : ".$name."        Son Adresse Email est le : ".$email;
+
+  	if (mail($moi, $envoi, $message, $headers)) {
+  		# code...
+  		echo "Message Mail Envoye avec Succes !";
+  	} else {
+  		echo "Desole ! Une erreur est survenue... Votre Message mail n'a pas ete envoye.";
+  	}
+
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -24,7 +45,7 @@
 </script>
 <!-- End of Async Callbell Code -->
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       // Mettez le code Jquery ici.
       function sendData()
 {
@@ -47,13 +68,13 @@
     
   return false;
 }
-    </script>
+    </script> -->
 	</head>
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<div id="mobile-menu-overlay"></div>
 		<nav class="navbar navbar-expand-lg fixed-top">
 			<div class="container">
-				<a class="navbar-brand" href="#">Reality Tech</a>
+				<a class="navbar-brand" href="index.php">Reality Tech</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
 				</button>
@@ -100,10 +121,10 @@
 												<h4 class="font-weight-medium">Notre VISION : Augmenter votre visibilité sur le Web et booster votre CLIENTELE à travers la conception de tous vos types de plateformes
 											</h4>
 										</div>
-										<p class="mt-3">Confiez-nous donc à partir de maintenant, tous vos projets de plateformes web 
+										<p class="mt-3">Confiez-nous donc à partir de maintenant, tous vos projets de plateformes web afin d'accroitre 
 
 											<br>
-											afin d'accroitre la visibilité de vos produits et services sur INTERNET.
+											la visibilité de vos produits et services sur INTERNET.
 										</p>
 										<a href="#services" class="btn btn-secondary mt-3">Voir Plus</a>
 									</div>
@@ -295,7 +316,7 @@
 							<div class="d-flex py-3 my-3 my-lg-0 justify-content-center" data-aos="fade-up">
 								<img src="images/finished-project.svg" alt="satisfied-client" class="mr-3">
 								<div>
-									<h4 class="font-weight-bold text-dark mb-0"><span class="fpVals">14</span></h4>
+									<h4 class="font-weight-bold text-dark mb-0"><span class="fpVal">0</span></h4>
 									<h5 class="text-dark mb-0">Projets Terminés</h5>
 								</div>
 							</div>
@@ -304,7 +325,7 @@
 							<div class="d-flex py-3 my-3 my-lg-0 justify-content-center" data-aos="fade-down">
 								<img src="images/team-members.svg" alt="Team Members" class="mr-3">
 								<div>
-									<h4 class="font-weight-bold text-dark mb-0"><span class="tMVals">3</span></h4>
+									<h4 class="font-weight-bold text-dark mb-0"><span class="tMVal">0</span></h4>
 									<h5 class="text-dark mb-0">Membres de l'Equipe</h5>
 								</div>
 							</div>
@@ -313,7 +334,7 @@
 							<div class="d-flex py-3 my-3 my-lg-0 justify-content-center" data-aos="fade-up">
 								<img src="images/our-blog-posts.svg" alt="Our Blog Posts" class="mr-3">
 								<div>
-									<h4 class="font-weight-bold text-dark mb-0"><span class="bPVals">21</span></h4>
+									<h4 class="font-weight-bold text-dark mb-0"><span class="bPVal">0</span></h4>
 									<h5 class="text-dark mb-0">Articles de Blog</h5>
 								</div>
 							</div>
@@ -438,7 +459,7 @@
 									<li>Idea for smaller professional websites</li>
 									<li>Web space</li>
 								</ul>
-								<a href="#" class="btn btn-outline-primary">En savoir plus</a>
+								<a href="https://wa.me/22964432715?text=Bonjour à vous. Je%20souhaite%20souscrire%20à%20l'Offre%20*Starter Business*%20situé%20sur votre%20site.%20*Merci*%20!" class="btn btn-outline-primary">En savoir plus</a>
 							</div>
 						</div>
 						<div class="col-sm-4">
@@ -453,7 +474,7 @@
 									<li>Idea for smaller professional websites</li>
 									<li>Web space</li>
 								</ul>
-								<a href="#" class="btn btn-primary">En savoir plus</a>
+								<a href="https://wa.me/22964432715?text=Bonjour à vous. Je%20souhaite%20souscrire%20à%20l'Offre%20*Professional*%20situé%20sur votre%20site.%20*Merci*%20!"class="btn btn-primary">En savoir plus</a>
 							</div>
 						</div>
 						<div class="col-sm-4">
@@ -468,7 +489,7 @@
 									<li>Idea for smaller professional websites</li>
 									<li>Web space</li>
 								</ul>
-								<a href="#" class="btn btn-outline-primary">En savoir plus</a>
+								<a href="https://wa.me/22964432715?text=Bonjour à vous. Je%20souhaite%20souscrire%20à%20l'Offre%20*Premium*%20situé%20sur votre%20site.%20*Merci*%20!" class="btn btn-outline-primary">En savoir plus</a>
 							</div>
 						</div>
 					</div>
@@ -483,7 +504,7 @@
 						<div class="col-sm-7" data-aos="fade-up" data-aos-offset="-500">
 							<h3 class="font-weight-medium text-dark mt-5 mt-lg-0">Vous avez une préoccupation ?</h3>
 							<h5 class="text-dark mb-5">Envoyez-nous un message !</h5>
-							<form method="POST" onsubmit="return sendData();">
+							<form method="POST">
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
@@ -519,15 +540,15 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<address>
-								<!-- <p>143 castle road 517</p> -->
-								<!-- <p class="mb-4">district, kiyev port south Canada</p> -->
+								<p>143 castle road 517</p>
+								<p class="mb-4">district, kiyev port south Canada</p>
 								<!-- <div class="d-flex align-items-center">
 									<p class="mr-4 mb-0">+3 123 456 789</p>
 									<a href="mailto:info@gmail.com" class="footer-link">realitytech@gmail.com</a>
 								</div> -->
 								<div class="d-flex align-items-center">
 									<p class="mr-4 mb-0">+229 64 43 27 15</p>
-									<a href="mailto:realitytech2019@gmail.com" class="footer-link">realitytech2019@gmail.com</a>
+									<p><a href="mailto:realitytech2019@gmail.com" class="footer-link">realitytech2019@gmail.com</a></p>
 								</div>
 							</address>
 							<div class="social-icons">
@@ -582,7 +603,7 @@
 					<div class="d-flex justify-content-between align-items-center">
 						<div class="d-flex align-items-center">
 							<!-- <img src="images/logo.sv" alt="Reality Tech" class="mr-3"></br> -->
-							<p class="mb-0 text-small pt-1">© 2021-2024 <a href="#" class="text-white">Reality Tech </a> All rights reserved.</p>
+							<p class="mb-0 text-small pt-1">© 2021 <a href="#" class="text-white">Reality Tech | </a> Design by Orpheric_Codeur.</p>
             
 						</div>
            
